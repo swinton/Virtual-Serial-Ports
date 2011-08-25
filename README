@@ -1,0 +1,12 @@
+1. Install socat
+
+$ brew install socat
+
+2. Create a pair of virtual serial ports
+
+$ socat -d -d pty,raw,echo=0 pty,raw,echo=0
+2011/08/25 21:31:10 socat[57798] N PTY is /dev/ttys005
+2011/08/25 21:31:10 socat[57798] N PTY is /dev/ttys006
+2011/08/25 21:31:10 socat[57798] N starting data transfer loop with FDs [3,3] and [5,5]
+
+3. Communicate between ports using in.py (reads from port) and out.py (writes to port)
